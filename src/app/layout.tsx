@@ -10,7 +10,7 @@ export default function RootLayout({
         <title>FeedBack swiper</title>
       </head>
       <body
-        className= {`antialiased bg-[#F7F8F9]  scrollbar scrollbar-white`}
+        className= {`antialiased   scrollbar scrollbar-white`}
       >
         {children}
       </body>

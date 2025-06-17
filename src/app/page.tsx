@@ -6,7 +6,7 @@ import FeedbackCard from "../components/feedback-card"
 // Static data for demo purposes
 const feedbackItems = [
   {
-    text: "This app has completely transformed how I manage my daily tasks!",
+    text: "This app has change how I manage my tasks!",
     image: "/placeholder.svg?height=300&width=400",
   },
   {
@@ -26,7 +26,7 @@ const feedbackItems = [
     image: "/placeholder.svg?height=300&width=400",
   },
   {
-    text: "Love the dark mode option - easy on the eyes during late work sessions.",
+    text: "Love the dark mode option - easy on the eyes!.",
     image: "/placeholder.svg?height=300&width=400",
   },
 ]
@@ -42,12 +42,12 @@ export default function App() {
   const currentItem = feedbackItems[currentIndex]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-[#181C14]  flex items-center justify-center p-4">
       <div className="w-full max-w-md">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-800 mb-2">Feedback Collector</h1>
-          <p className="text-gray-600">Swipe right to like, left to pass</p>
-          <div className="mt-4 text-sm text-gray-500">
+        <div className="text-center mb-10">
+          <h1 className="text-5xl font-bold text-gray-200 mb-2  text-nowrap font-mono">Feedback Collector</h1>
+          <p className="text-white opacity-70 font-mono">Swipe right to like, left to pass</p>
+          <div className="mt-4 text-sm text-white font-mono">
             {currentIndex < feedbackItems.length ? (
               <span>
                 {currentIndex + 1} of {feedbackItems.length}
@@ -62,13 +62,13 @@ export default function App() {
           {currentItem ? (
             <FeedbackCard key={currentIndex} item={currentItem} onSwipe={handleSwipe} />
           ) : (
-            <div className="text-center p-8 bg-white rounded-2xl shadow-lg">
+            <div className="text-center  rounded-2xl shadow-lg">
               <div className="text-6xl mb-4">🎉</div>
-              <h2 className="text-2xl font-bold text-gray-800 mb-2">All Done!</h2>
-              <p className="text-gray-600">No more feedback to review.</p>
+              <h2 className="text-2xl font-bold text-gray-200 mb-2">All Done!</h2>
+              <p className="text-gray-100">No more feedback to review.</p>
               <button
                 onClick={() => setCurrentIndex(0)}
-                className="mt-4 px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
+                className="mt-4 px-6 py-2 bg-gray-200 text-black rounded-lg hover:bg-gray-400 transition-colors"
               >
                 Start Over
               </button>
@@ -76,7 +76,7 @@ export default function App() {
           )}
         </div>
 
-        <div className="flex justify-center mt-8 space-x-8 text-sm text-gray-500">
+        <div className="flex justify-center mt-20 space-x-8 text-sm text-gray-200">
           <div className="flex items-center space-x-2">
             <span className="text-2xl">👎</span>
             <span>Swipe left to pass</span>

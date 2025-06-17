@@ -39,7 +39,7 @@ export default function FeedbackCard({ item, onSwipe }: FeedbackCardProps) {
     <div className="relative w-full max-w-sm">
       {/* Feedback Indicators */}
       <motion.div
-        className="absolute -top-4 -left-4 z-10 bg-green-500 text-white px-4 py-2 rounded-full font-bold text-lg shadow-lg"
+        className="absolute -top-4 -left-4  bg-green-500 text-white px-4 py-2 rounded-full font-bold text-lg shadow-lg"
         style={{
           opacity: likeOpacity,
           scale: likeScale,
@@ -49,7 +49,7 @@ export default function FeedbackCard({ item, onSwipe }: FeedbackCardProps) {
       </motion.div>
 
       <motion.div
-        className="absolute -top-4 -right-4 z-10 bg-red-500 text-white px-4 py-2 rounded-full font-bold text-lg shadow-lg"
+        className="absolute -top-4 -right-4  bg-red-500 text-white px-4 py-2 rounded-full font-bold text-lg shadow-lg"
         style={{
           opacity: nopeOpacity,
           scale: nopeScale,
@@ -60,7 +60,7 @@ export default function FeedbackCard({ item, onSwipe }: FeedbackCardProps) {
 
       {/* Main Card */}
       <motion.div
-        className="bg-white rounded-2xl shadow-xl p-6 cursor-grab active:cursor-grabbing select-none"
+        className="bg-[#F2F2F2] rounded-xl shadow-xl p-6 cursor-grab active:cursor-grabbing select-none z-50"
         style={{
           x,
           rotate,
@@ -70,9 +70,10 @@ export default function FeedbackCard({ item, onSwipe }: FeedbackCardProps) {
         dragConstraints={{ left: 0, right: 0 }}
         dragElastic={0.2}
         onDragEnd={handleDragEnd}
-        whileDrag={{ scale: 1.05 }}
+        whileDrag={{ scale: 1.3 }}
+        whileHover={{scale:1.1}}
         initial={{ scale: 0.9, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
+        animate={{ scale: [1], opacity: 1 }}
         transition={{
           type: "spring",
           stiffness: 300,
@@ -86,25 +87,17 @@ export default function FeedbackCard({ item, onSwipe }: FeedbackCardProps) {
             alt="Feedback illustration"
             width={400}
             height={200}
-            className="w-full h-48 object-cover"
+            className="w-full h-[20rem] object-cover"
           />
         </div>
 
         {/* Text Content */}
         <div className="text-center">
-          <p className="text-gray-800 text-lg leading-relaxed font-medium">"{item.text}"</p>
+          <p className="text-gray-800 font-mono text-lg leading-relaxed font-medium">"{item.text}"</p>
         </div>
 
         {/* Drag Hint */}
-        <div className="mt-6 flex justify-center">
-          <div className="flex space-x-2">
-            <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
-            <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
-            <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
-            <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
-            <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
-          </div>
-        </div>
+
       </motion.div>
     </div>
   )
