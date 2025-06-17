@@ -1,0 +1,8 @@
+1.Swipe Gesture:
+For implementing the swipe gesture, as indicated in the assignment, I used Framer Motion. The drag property made the div draggable. To constrain the dragging motion, I used dragConstraints={{ left: 0, right: 0 }} to restrict the drag within the specified bounds. Additionally, I utilized the onDragEnd method, which takes a callback function, handleDragEnd. This callback contains the core logic responsible for all the magic happening during the swipe interaction.
+
+2.Like & Nope Indicators:
+To implement the "Like" and "Nope" indicators, I used a basic absolute-positioned <div>. Initially, its style had opacity: 0 and scale: 0. As the card tilts, both the opacity and scale increase, creating a smooth effect. Thanks to Framer Motion, this behavior was straightforward to implement.
+
+3.Handling the Next Card:
+Inside the handleDragEnd callback, there is a prop function called onSwipe. Whenever the card's offset.x crosses the threshold limit, the onSwipe function is triggered, receiving a parameter (either "right" or "left"). This function contains the logic to update the currIndex state, which determines the current element displayed from the data array.

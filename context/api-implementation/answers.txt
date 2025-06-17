@@ -1,0 +1,8 @@
+1. Loading States & Skeletons:-
+Since there can be a delay between fetching API data, we use skeletons to provide a better user experience during the wait time. A skeleton acts as a placeholder (like a grey box) with the same dimensions as the card. Inside the skeleton, there are two smaller skeletons representing the size of the image and the title. This approach ensures that the layout remains consistent, even before the actual data is loaded.
+
+2. Pre-fetching:-
+To enable smooth and instant transitions, we use pre-fetching, which essentially means "loading in advance." For example, when the user hovers over a card, the application fetches the next card's data in the background simultaneously. This ensures seamless transitions without glitches or delays when the next card is displayed.
+
+3. Basic Error Handling UI:-
+Errors can occur during API fetching due to reasons like internet connectivity issues or API failures. To handle this, we first attempt to re-fetch the API in the background without impacting the UI. If the re-fetch fails after the second or third attempt, we display an error message on the UI. The user is provided with an option to retry the operation, typically via a button or a simple anchor tag.
