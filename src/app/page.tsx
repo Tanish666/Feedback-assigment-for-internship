@@ -42,12 +42,12 @@ export default function App() {
   const currentItem = feedbackItems[currentIndex]
 
   return (
-    <div className="min-h-screen bg-[#181C14]  flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50  flex items-center justify-center p-4">
       <div className="w-full max-w-md">
-        <div className="text-center mb-10">
-          <h1 className="text-5xl font-bold text-gray-200 mb-2  text-nowrap font-mono">Feedback Collector</h1>
-          <p className="text-white opacity-70 font-mono">Swipe right to like, left to pass</p>
-          <div className="mt-4 text-sm text-white font-mono">
+        <div className="text-center mb-14">
+          <h1 className="text-5xl font-bold text-gray-800 mb-2  text-nowrap font-mono">Feedback Collector</h1>
+          <p className="text-black opacity-70 font-mono">Swipe right to like, left to pass</p>
+          <div className="mt-4 text-sm text-black opacity-65 font-bold">
             {currentIndex < feedbackItems.length ? (
               <span>
                 {currentIndex + 1} of {feedbackItems.length}
@@ -76,7 +76,7 @@ export default function App() {
           )}
         </div>
 
-        <div className="flex justify-center mt-20 space-x-8 text-sm text-gray-200">
+        <div className="flex justify-center mt-20 space-x-8 text-sm text-gray-800">
           <div className="flex items-center space-x-2">
             <span className="text-2xl">👎</span>
             <span>Swipe left to pass</span>

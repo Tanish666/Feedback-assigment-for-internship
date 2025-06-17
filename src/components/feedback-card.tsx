@@ -60,7 +60,7 @@ export default function FeedbackCard({ item, onSwipe }: FeedbackCardProps) {
 
       {/* Main Card */}
       <motion.div
-        className="bg-[#F2F2F2] rounded-xl shadow-xl p-6 cursor-grab active:cursor-grabbing select-none z-50"
+        className="bg-[#222831] rounded-xl shadow-xl p-6 cursor-grab active:cursor-grabbing select-none z-50"
         style={{
           x,
           rotate,
@@ -81,7 +81,7 @@ export default function FeedbackCard({ item, onSwipe }: FeedbackCardProps) {
         }}
       >
         {/* Image */}
-        <div className="mb-4 rounded-xl overflow-hidden">
+        <div className="text-black bg-gray-200 shadow-2xl mb-4 rounded-xl p-5 overflow-hidden">
           <Image
             src={item.image || "/placeholder.svg"}
             alt="Feedback illustration"
@@ -93,7 +93,7 @@ export default function FeedbackCard({ item, onSwipe }: FeedbackCardProps) {
 
         {/* Text Content */}
         <div className="text-center">
-          <p className="text-gray-800 font-mono text-lg leading-relaxed font-medium">"{item.text}"</p>
+          <p className="text-gray-200 font-mono text-lg leading-relaxed font-medium">"{item.text}"</p>
         </div>
 
         {/* Drag Hint */}
