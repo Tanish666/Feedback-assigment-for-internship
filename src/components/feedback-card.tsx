@@ -39,7 +39,7 @@ export default function FeedbackCard({ item, onSwipe }: FeedbackCardProps) {
     <div className="relative w-full max-w-sm">
       {/* Feedback Indicators */}
       <motion.div
-        className="absolute -top-4 -left-4  bg-green-500 text-white px-4 py-2 rounded-full font-bold text-lg shadow-lg"
+        className="absolute -top-4 -left-4  bg-green-500 text-white px-4 py-2 rounded-full font-bold text-lg  z-10 shadow-lg"
         style={{
           opacity: likeOpacity,
           scale: likeScale,
@@ -49,7 +49,7 @@ export default function FeedbackCard({ item, onSwipe }: FeedbackCardProps) {
       </motion.div>
 
       <motion.div
-        className="absolute -top-4 -right-4  bg-red-500 text-white px-4 py-2 rounded-full font-bold text-lg shadow-lg"
+        className="absolute -top-4 -right-4 z-10 bg-red-500 text-white px-4 py-2 rounded-full font-bold text-lg shadow-lg"
         style={{
           opacity: nopeOpacity,
           scale: nopeScale,
@@ -60,7 +60,7 @@ export default function FeedbackCard({ item, onSwipe }: FeedbackCardProps) {
 
       {/* Main Card */}
       <motion.div
-        className="bg-[#222831] rounded-xl shadow-xl p-6 cursor-grab active:cursor-grabbing select-none z-50"
+        className="bg-[#222831] rounded-xl shadow-xl p-6 cursor-grab active:cursor-grabbing select-none"
         style={{
           x,
           rotate,
@@ -70,7 +70,7 @@ export default function FeedbackCard({ item, onSwipe }: FeedbackCardProps) {
         dragConstraints={{ left: 0, right: 0 }}
         dragElastic={0.2}
         onDragEnd={handleDragEnd}
-        whileDrag={{ scale: 1.3 }}
+        whileDrag={{ scale: 1.2 }}
         whileHover={{scale:1.1}}
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: [1], opacity: 1 }}
